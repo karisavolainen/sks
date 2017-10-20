@@ -1,0 +1,88 @@
+// out: null, main: custom.less
+
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+
+// ------------
+// MIXINGS
+// ------------
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+      -ms-border-radius: @radius;
+          border-radius: @radius;
+		background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+.opacity(@opacity) {
+  opacity: @opacity;
+}
+.opacity-ie(@opacity-ie){
+    filter: alpha(opacity=@opacity-ie); //IE8-9
+}
+.transition(@args) {
+  -webkit-transition: @args;
+  -moz-transition: @args;
+  -ms-transition: @args;
+  -o-transition: @args;
+  transition: @args;
+}
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+}
+.box-shadow(@string){
+  -moz-box-shadow: @string;
+  -o-box-shadow: @string;
+  -webkit-box-shadow: @string;
+  box-shadow: @string;
+}
+.gradient (@startColor: #EEE, @endColor: #FFF) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.placeholder(@string){
+    ::-webkit-input-placeholder { color: @string }
+    :-moz-placeholder { color: @string; }
+    ::-moz-placeholder { color: @string; }
+    :-ms-input-placeholder { color: @string; }
+}
+
+
+// ------------
+// VARIABLES
+// ------------
+@break-xs       : 480px;
+@break-sm       : 768px;
+@break-md       : 992px;
+@break-lg       : 1200px;
+
+@break-xs-max   : 767px;
+@break-sm-max   : 991px;
+@break-md-max   : 1199px;
+
+@white			: #FFFFFF;
+@black			: #000000;
+@grey-ccc       : #CCCCCC;
+
+
+
+@media screen and (max-width:@break-xs){ 
+    [class*="col-xs"]{ float: none; width: 100%; }
+    [class*="col-xs-offset"]{ margin-left: 0; }
+}
+a, a > img, button, input, select, textarea, .btn{
+    .transition(all 250ms ease-in-out);
+    &:hover, &:active, &:focus{ outline: 0;}
+}

@@ -1,0 +1,9 @@
+---
+name: karisavolainen
+production:
+  domain: karisavolainen.fi.seravo.com
+  ssh_port: 10212
+  url: https://karisavolainen.fi.seravo.com
+development:
+  domains:
+  - karisavolainen.local
