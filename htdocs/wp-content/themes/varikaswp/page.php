@@ -2,7 +2,6 @@
 
 
 
-
 <div id="content" role="main">
     <div class="container">
         <div class="row">

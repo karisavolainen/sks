@@ -1,9 +1,15 @@
 <?php
 /*
-Template Name: Subpage
+Template Name: Secret
 */
 ?>
 
+<?php
+if ( post_password_required() ) {
+	get_the_password_form();
+        return;
+}
+?>
 <?php
 	get_header();
 	$image_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
@@ -12,16 +18,15 @@ Template Name: Subpage
 <div id="section-landing" class="clip-right-top bg-image" <?php if( $image_url ) { ?> style="background: url(<?php echo $image_url; ?>);"<?php } ?>>
 	<div class="container top">
 		<div class="row">
-			<div class="col-sm-12 hero text-center">
-                                <img class="animated fadeIn middle" id="skslogo" src="/wp-content/uploads/sks-all.svg" alt="Logo">
-                        </div>
+			<div class="col-sm-12 text-center text-center-xxs text-center-xs">
+				<img class="animated fadeIn" id="skslogo" src="/wp-content/uploads/sks-all.svg" alt="Logo">
+			</div>
 			<div class="text-center"><a class="btn" href="mailto:kari@karisavolainen.com">Ota yhteyttä</a></div>
 
 			</div>
         </div><!--/.row-->
     </div><!--/.container-->
 </div><!--/#section-landing-->
-
 <div id="section-info" class="section section-dark">
 	<div class="container">
 		<div class="row">
