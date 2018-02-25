@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 ?>
 
 
-<div id="section-info" class="section section-dark">
+<div id="section-info" class="section section-light">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
