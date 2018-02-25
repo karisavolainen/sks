@@ -45,7 +45,6 @@ if ( post_password_required() ) {
                 <a href="<?php echo $image['url']; ?>" class="fresco"   data-fresco-group="unique_name">
                      <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
                 </a>
-                <!-- p><?php echo $image['caption']; ?></p -->
             </div>
         <?php endforeach; ?>
 
